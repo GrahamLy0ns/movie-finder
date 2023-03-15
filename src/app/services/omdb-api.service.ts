@@ -16,17 +16,19 @@ export class OmdbApiService {
 
   constructor(private _http:HttpClient) { }
 
-  getMovieData(movieName:string):Observable<IOMDBResponse>{
-    return this._http.get<IOMDBResponse>(this._siteURL+ this._key + movieName).pipe(
-      tap(data => console.log("Moviedata/error" + JSON.stringify(data))
+   getMovieData(movieName:string):Observable<IOMDBResponse>{
+     return this._http.get<IOMDBResponse>(this._siteURL+ this._key + movieName).pipe(
+       tap(data => console.log("Moviedata/error" + JSON.stringify(data))
 
-      ),
-    catchError(this.handleError)
-    );
-  }
+       ),
+     catchError(this.handleError)
+     );
+   }
 
   private handleError(err:HttpErrorResponse){
     console.log("OmdbApiService:" + err.message);
     return throwError(() => new Error("OmdbApiServie" + err.message))
   }
+
+ 
 }
