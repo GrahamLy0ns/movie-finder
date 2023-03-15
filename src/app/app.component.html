@@ -319,17 +319,27 @@
       <h3>{{movieData.Error}}</h3>
 
     </div>
-    <div *ngIf="movieData.Title">
-      <img src="{{movieData.Poster}}">
 
+    <!-- <div *ngIf="movieData.Title">
+      <img src="{{movieData.Poster}}">
     </div>
     <div class="col-sm-8">
       <div *ngIf="movieData.Title">
         <h1>{{movieData.Title}}</h1>
-        <h2>Director:{{movieData.Director}}</h2>
-
+          <h4>Director: {{movieData.Director}}</h4>
+          <h4>Ratings: {{movieData.imdbRating}}</h4>
+          <h4>Genre: {{movieData.Genre}}</h4>
       </div>
+    </div> -->
 
+    <div class="card" style="width: 18rem; margin-top: 150px;" *ngIf="movieData.Title">
+      <img src="{{movieData.Poster}}">
+      <div class="card-body" *ngIf="movieData.Title" style="margin-left: 50px;">
+        <h1 class="card-title">{{movieData.Title}}</h1>
+          <h4 class="card-text">Director: {{movieData.Director}}</h4>
+          <h4 class="card-text">Ratings: {{movieData.imdbRating}}</h4>
+          <h4 class="card-text">Genre: {{movieData.Genre}}</h4>
+      </div>
     </div>
 
   </div>
