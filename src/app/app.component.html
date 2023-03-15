@@ -332,7 +332,7 @@
       </div>
     </div> -->
 
-    <div class="card" style="width: 18rem; margin-top: 150px;" *ngIf="movieData.Title">
+    <!-- <div class="card" style="width: 18rem; margin-top: 150px;" *ngIf="movieData.Title">
       <img src="{{movieData.Poster}}">
       <div class="card-body" *ngIf="movieData.Title" style="margin-left: 50px;">
         <h1 class="card-title">{{movieData.Title}}</h1>
@@ -340,7 +340,26 @@
           <h4 class="card-text">Ratings: {{movieData.imdbRating}}</h4>
           <h4 class="card-text">Genre: {{movieData.Genre}}</h4>
       </div>
-    </div>
+    </div> -->
+
+    <div class="row bg-light mt-4 p-4" *ngIf="movieData">
+      <div class="col-sm-4">
+          <div>
+              <h3>{{movieData.Error}}</h3>
+          </div>
+          <div *ngIf="movieData.Title">
+              <img src="{{movieData.Poster}}" alt="movie poster">
+          </div>
+      </div>
+      <div class="col-sm-8">
+          <div *ngIf="movieData.Title">
+            <h1 class="card-title">{{movieData.Title}}</h1>
+            <h4 class="card-text">Director: {{movieData.Director}}</h4>
+            <h4 class="card-text">Ratings: {{movieData.imdbRating}}</h4>
+            <h4 class="card-text">Genre: {{movieData.Genre}}</h4>
+          </div>
+      </div>
+  </div>
 
   </div>
 
